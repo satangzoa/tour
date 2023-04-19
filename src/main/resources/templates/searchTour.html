@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+					<h1>여행 목록</h1>
+
+	<form action="" method="get"> 
+	
+	<table>
+	 <thead>
+					<tr>
+						<td >순번</td>
+						<td >여행이름</td>
+						<td >출발일</td>
+						<td  >여행기간</td>
+						<td  >가격</td>
+					</tr >
+				</thead>
+
+	<tbody>
+		<tr th:each="t: ${tours}"  > <!-- Controller에서 List<TourInfo> tours= tourinfoService.searchTourAll();의 tours다 -->
+			<td th:text="${t.tourCode}">순번:</td>
+			<td th:text="${t.tourName}" >여행이름:</td>
+			<td th:text="${#dates.format(t.depDay, 'yyyy-MM-dd')}" >출발일:</td>
+			<td th:text="|${t.tourDays}일|">여행기간:</td> <!-- 문자 더하기 -->
+			<td th:text="|${#numbers.formatInteger(t.basePrice,3,'COMMA')}원|" >가격:</td>
+		</tr>
+		</tbody>
+			</table>
+	</form>
+
+</body>
+
+</html>
+
+
+
+
+
+
