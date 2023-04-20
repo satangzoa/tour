@@ -29,7 +29,7 @@ public class TourInfo {
 	@SequenceGenerator(name = "tourinfo_seq", sequenceName = "tourinfo_seq", allocationSize = 1)
 	private int tourCode; //순번
 	private String tourName; //투어이름
-	private int tourDays; //여행기간
+	private Integer tourDays; //여행기간 int는  null이 안들어가니까 Integer로 해준다
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date depDay; //출발일
 	private int basePrice; //가격

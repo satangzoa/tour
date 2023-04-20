@@ -74,7 +74,7 @@ insert into tourinfo
 values 
 	(tourinfo_seq.nextval, '괌 자유여행', 4, 
 		to_date('2023-04-25', 'YYYY-MM-DD'),
-		80000, '나가자','괌에서 가장 유명한 곳에서 자유롭게 여행을 즐기실 수 있습니다', 1);
+		800000, '나가자','괌에서 가장 유명한 곳에서 자유롭게 여행을 즐기실 수 있습니다', 1);
 insert into tourinfo
 (tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
 values 
@@ -84,15 +84,30 @@ values
 insert into tourinfo
 (tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
 values 
-	(tourinfo_seq.nextval, '단체배낭 비바체 16일', 2, 
+	(tourinfo_seq.nextval, '_단체배낭 비바체 16일', 16, 
 		to_date('2023-06-25', 'YYYY-MM-DD'),
-		9000000, '정진숙','미국의 주요도시를 한번에 다녀오실 수 있는 즐겁고 안전한 단체배낭여행', 1);
+		9000000, '','미국의 주요도시를 한번에 다녀오실 수 있는 즐겁고 안전한 단체배낭여행', 1);
 insert into tourinfo
 (tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
 values 
-	(tourinfo_seq.nextval, '몰디브 홀로여행', 4, 
-		to_date('2023-04-25', 'YYYY-MM-DD'),
+	(tourinfo_seq.nextval, '몰디브 홀로여행', 7, 
+		to_date('2023-08-30', 'YYYY-MM-DD'),
 		4500000, '신상훈','조식&석식 포함 특가, 올인클루시브 특가 제공', 1);
+		
+insert into tourinfo
+(tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
+values 
+	(tourinfo_seq.nextval, '대만 골프투어', 5, 
+		to_date('2023-09-25', 'YYYY-MM-DD'),
+		950000, '박자바','골프장에서 모든걸 해결합니다!', 1);
+		
+insert into tourinfo
+(tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
+values 
+	(tourinfo_seq.nextval, '알래스카 오로라보러가자', 6, 
+		to_date('2023-11-23', 'YYYY-MM-DD'),
+		7500000, '이정보','신비의 땅 알래스카 6일', 1);
+
 
 --reserve
 
@@ -112,7 +127,7 @@ insert into reserve (reserve_no, reserve_day,
 	adult_count,child_count,tour_code,customer_code, 
 	sum_price,remarks)
 values
-	(reserve_seq.nextval, sysdate, 5, 2, 1, 1, 3500000, '즐거운 여행 되겠습니다');
+	(reserve_seq.nextval, sysdate, 5, 2, 1, 1, 3500000, null);
 
 
 

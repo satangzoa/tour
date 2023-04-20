@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oraclejava.tour.model.TourInfo;
+import com.oraclejava.tour.repository.TourInfoCriteria;
 import com.oraclejava.tour.repository.TourInfoRepository;
 
 @Service
@@ -22,4 +23,22 @@ public class TourinfoServiceImpl implements TourinfoService{
 		return tourInfoRepository.findAll();
 	}
 
+	@Override
+	public List<TourInfo> searchTour(TourInfoCriteria criteria) {
+		return tourInfoRepository.findToursByCriteria(criteria);
+	}
+	
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
