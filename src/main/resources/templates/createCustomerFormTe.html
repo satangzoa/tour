@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>회 원 가 입</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script>
+$(function(){
+	$("#signUp").click(function(){
+		$("#signIUpForm").submit();
+	});
+	
+	$("#SignInTitle").click(function() {
+		location.href="/login";
+	});
+});
+</script>
+</head>
+<body>
+  <div class="signin">
+    <div class="back-img">
+      <div class="sign-in-text">
+        <h2 class="nonactive" id="SignInTitle">Sign In</h2>
+        <h2 class="active" id="SignUpTitle">Sign Up</h2>
+      </div><!--/.sign-in-text-->
+      <div class="layer">
+      </div><!--/.layer-->
+      <p class="point">&#9650;</p>
+    </div><!--/.back-img-->
+    <div class="form-section">
+		<form action="" method="post" th:object="${customer}" id="signIUpForm">
+			<p>
+				<label for="customerName">이름: </label>
+				<input type="text" th:field="*{customerName}" >
+			</p>
+			<p>
+				<label for="customerBirth">생년월일(YYYY-MM-DD): </label>
+				<input type="text" th:field="*{customerBirth}" >
+			</p>
+			<p>
+				<label for="customerJob">직업: </label>
+				<input type="text" th:field="*{customerJob}" >
+			</p>
+			<p>
+				<label for="customerMail">이메일: </label>
+				<input type="email" th:field="*{customerMail}" >
+			</p>
+			<p>
+				<label for="customerTel">전화번호: </label>
+				<input type="text" th:field="*{customerTel}" >
+			</p>
+			<p>
+				<label for="customerPost">우편번호: </label>
+				<input type="text" th:field="*{customerPost}" >
+			</p>
+			<p>
+				<label for="customerAdd">주소: </label>
+				<input type="text" th:field="*{customerAdd}" >
+			</p>
+			<p>
+				<label for="customerPass">비밀번호: </label>
+				<input type="password" th:field="*{customerPass}" >
+			</p>
+			<p>
+				<label for="customerPassConfirm">비밀번호 재확인: </label>
+				<input type="password" th:field="*{customerPassConfirm}" >
+			</p>
+		
+		</form>
+
+
+    </div> <!-- 폼 -->
+    <div 
+    <input type="submit" id="signUp" class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
+      <button>가입</button>
+      
+ </div><!--/.signin-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

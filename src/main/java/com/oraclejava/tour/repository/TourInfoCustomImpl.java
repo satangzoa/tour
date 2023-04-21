@@ -31,8 +31,15 @@ public class TourInfoCustomImpl implements TourInfoCustom{
 		}
 		
 		//여행 출발 일
-		if ( criteria.getDepStartDay() != null && criteria.getDepEndDay() != null) {
-			jpql += " AND t.depDay BETWEEN :depStartDay AND :depEndDay";
+		if ( criteria.getDepStartDay() != null ) {
+			if( criteria.getDepEndDay() != null ) {
+				jpql += " AND t.depDay BETWEEN :depStartDay AND :depEndDay";
+			}
+		jpql += " AND t.depDay >= :depStartDay ";
+		} 
+				
+		if ( criteria.getDepEndDay() != null) {
+			jpql += " AND t.depDay >= :depEndDay ";
 		}
 		
 		//여행 가격
@@ -61,11 +68,22 @@ public class TourInfoCustomImpl implements TourInfoCustom{
 		}
 		
 		//여행 종료 일
-		if ( criteria.getDepStartDay() != null && criteria.getDepEndDay() != null) {
+		if ( criteria.getDepStartDay() != null) {
+			if (criteria.getDepEndDay() != null) {
+				query.setParameter("depEndDay", criteria.getDepEndDay());
+		} 	
 		 query.setParameter("depStartDay", criteria.getDepStartDay());
-		 query.setParameter("depEndDay", criteria.getDepEndDay());
-		 
 		}
+		
+			if (criteria.getDepEndDay() != null) {
+				query.setParameter("depEndDay", criteria.getDepEndDay());
+		} 	
+		
+//		if ( criteria.getDepStartDay() != null && criteria.getDepEndDay() != null) {
+//		 query.setParameter("depStartDay", criteria.getDepStartDay());
+//		 query.setParameter("depEndDay", criteria.getDepEndDay());
+//		 
+//		}
 		
 		//여행 가격
 				if ( criteria.getBaseStartPrice() != null && criteria.getBaseEndPrice() != null) {

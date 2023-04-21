@@ -53,11 +53,15 @@ public class SearchTourController {
 		//StringUtils 스프링부트에 포함되어 있는 라이브러리
 //		if(depStartDay != null && depEndDay != null) {
 			
-		if(!StringUtils.isEmpty(depStartDay) &&   !StringUtils.isEmpty(depEndDay)) {
-			
-		criteria.setDepStartDay(formatter.parse(depStartDay));
-		criteria.setDepEndDay(formatter.parse(depEndDay));
+		if(!StringUtils.isEmpty(depStartDay)) {
+			if(!StringUtils.isEmpty(depEndDay)) {
+				criteria.setDepEndDay(formatter.parse(depEndDay));
+			}
+			criteria.setDepStartDay(formatter.parse(depStartDay));
+		}
 		
+		if(!StringUtils.isEmpty(depEndDay)) {
+		criteria.setDepEndDay(formatter.parse(depEndDay));
 		}
 		
 //		List<TourInfo> tours = tourinfoService.searchTourAll();

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -38,6 +39,9 @@ public class Customer { //customer 테이블
 
 	//권한
 	private String role;
+	
+	@Transient//디비에서 관리하지 않는다
+	private String customerPassConfirm;
 }
 
 

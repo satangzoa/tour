@@ -79,7 +79,7 @@ insert into tourinfo
 values 
 	(tourinfo_seq.nextval, '괌 자유여행', 4, 
 		to_date('2023-04-25', 'YYYY-MM-DD'),
-		800000, '나가자','괌에서 가장 유명한 곳에서 자유롭게 여행을 즐기실 수 있습니다', 1);
+		7500000, '나가자','괌에서 가장 유명한 곳에서 자유롭게 여행을 즐기실 수 있습니다', 1);
 insert into tourinfo
 (tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
 values 
@@ -116,7 +116,7 @@ values
 insert into tourinfo
 (tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
 values 
-	(tourinfo_seq.nextval, '괌워터파크 우리끼리만', 2, 
+	(tourinfo_seq.nextval, '괌워터파크 우리끼리만', 9, 
 		to_date('2023-12-23', 'YYYY-MM-DD'),
 		18500000, '최눈솔','돌핀와칭 크루즈 호핑투어', 1);
 		
@@ -132,7 +132,7 @@ insert into tourinfo
 values 
 	(tourinfo_seq.nextval, '프리미엄-타이페이 3일 우리만', 3, 
 		to_date('2023-07-24', 'YYYY-MM-DD'),
-		68500000, '신상훈','전 일정 전용차량&한국어가이드 제공', 1);	
+		685000, '신상훈','전 일정 전용차량&한국어가이드 제공', 1);	
 
 insert into tourinfo
 (tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
