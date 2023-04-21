@@ -1,12 +1,17 @@
 insert into accommodation (accom_code, accom_name, accom_tel)
 values (accom_seq.nextval,'롯데시티호텔 구로','02-5323-4565');
 insert into accommodation (accom_code, accom_name, accom_tel)
-values (accom_seq.nextval,'포시즌즈 인천','032-2344-4565');
+values (accom_seq.nextval,'포시즌즈 인천','032-2344-456');
 insert into accommodation (accom_code, accom_name, accom_tel)
-values (accom_seq.nextval,'헬로우키티 부산','051-3433-4565');
+values (accom_seq.nextval,'헬로우키티 부산','051-3433-5312');
 insert into accommodation (accom_code, accom_name, accom_tel)
-values (accom_seq.nextval,'그랜드하야트 제주','064-9032-4565');
-
+values (accom_seq.nextval,'그랜드하야트 제주','064-9032-2368');
+insert into accommodation (accom_code, accom_name, accom_tel)
+values (accom_seq.nextval,'그랜드 워커힐 서울','02-3454-2335');
+insert into accommodation (accom_code, accom_name, accom_tel)
+values (accom_seq.nextval,'힐링스테이코스모스 울릉도','054-2342-3423');
+insert into accommodation (accom_code, accom_name, accom_tel)
+values (accom_seq.nextval,'콘래드 서울','02-2235-1233');
 -- customer
 insert into customer
 	(customer_code,customer_name,customer_pass,
@@ -108,7 +113,34 @@ values
 		to_date('2023-11-23', 'YYYY-MM-DD'),
 		7500000, '이정보','신비의 땅 알래스카 6일', 1);
 
+insert into tourinfo
+(tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
+values 
+	(tourinfo_seq.nextval, '괌워터파크 우리끼리만', 2, 
+		to_date('2023-12-23', 'YYYY-MM-DD'),
+		18500000, '최눈솔','돌핀와칭 크루즈 호핑투어', 1);
+		
+insert into tourinfo
+(tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
+values 
+	(tourinfo_seq.nextval, '시드니 골드코스트', 4, 
+		to_date('2023-03-29', 'YYYY-MM-DD'),
+		68500000, '김규리','아름다운 도시와 바닷가에서 휴양과 관광을 단독투어로 편안하게', 1);		
 
+insert into tourinfo
+(tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
+values 
+	(tourinfo_seq.nextval, '프리미엄-타이페이 3일 우리만', 3, 
+		to_date('2023-07-24', 'YYYY-MM-DD'),
+		68500000, '신상훈','전 일정 전용차량&한국어가이드 제공', 1);	
+
+insert into tourinfo
+(tour_code, tour_name, tour_days, dep_day, base_price, conductor, tour_abs, accom_code)
+values 
+	(tourinfo_seq.nextval, '발리 대가족', 8, 
+		to_date('2023-08-30', 'YYYY-MM-DD'),
+		68500000, '환원희','자유로운 호텔&일정 선택 가능', 1);	
+		
 --reserve
 
 insert into reserve (reserve_no, reserve_day, 

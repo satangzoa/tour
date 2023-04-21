@@ -2,6 +2,7 @@ package com.oraclejava.tour.repository;
 
 import java.util.List;
 
+import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -11,7 +12,7 @@ import com.oraclejava.tour.model.TourInfo;
 
 public class TourInfoCustomImpl implements TourInfoCustom{
 
-	@PersistenceContext
+	@PersistenceContext//jpql적용위해 사용
 	private EntityManager em;
 	
 	
@@ -29,10 +30,18 @@ public class TourInfoCustomImpl implements TourInfoCustom{
 			jpql += " AND t.tourDays = :tourDays ";//tourDays앞에 :는 파마리터를 보내기 위해 써줘야한다. 
 		}
 		
+		//여행 출발 일
+		if ( criteria.getDepStartDay() != null && criteria.getDepEndDay() != null) {
+			jpql += " AND t.depDay BETWEEN :depStartDay AND :depEndDay";
+		}
+		
+		//여행 가격
+		if ( criteria.getBaseStartPrice() != null  && criteria.getBaseEndPrice() != null) {
+			jpql += " AND t.basePrice BETWEEN :baseStartPrice AND :baseEndPrice";
+		}
+		
 		
 		jpql += " ORDER BY t.depDay "; // 출발일자 순으로 정렬
-		
-		
 		
 		
 		
@@ -51,6 +60,19 @@ public class TourInfoCustomImpl implements TourInfoCustom{
 			query.setParameter("tourDays",criteria.getTourDays());
 		}
 		
+		//여행 종료 일
+		if ( criteria.getDepStartDay() != null && criteria.getDepEndDay() != null) {
+		 query.setParameter("depStartDay", criteria.getDepStartDay());
+		 query.setParameter("depEndDay", criteria.getDepEndDay());
+		 
+		}
+		
+		//여행 가격
+				if ( criteria.getBaseStartPrice() != null && criteria.getBaseEndPrice() != null) {
+				 query.setParameter("baseStartPrice", criteria.getBaseStartPrice());
+				 query.setParameter("baseEndPrice", criteria.getBaseEndPrice());
+				 
+				}
 		
 		
 		
