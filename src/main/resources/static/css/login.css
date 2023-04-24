@@ -8,7 +8,7 @@ body{
 /*Sign In Form*/
 .signin{
   position: relative;
-  height: 850px;
+/*   height: 850px; */
   width: 500px;
   margin: auto;
   box-shadow: 0px 30px 125px -5px #000;}
@@ -78,3 +78,18 @@ h2 {
   border-radius: 0px;
   background-color: rgba(63, 78, 191, 1);
 }
+
+#sigInUpForm > p > span {
+	display: block;
+	font-size:small;
+	color: green;
+}
+
+
+
+
+
+
+
+
+

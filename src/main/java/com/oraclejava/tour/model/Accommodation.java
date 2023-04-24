@@ -21,7 +21,7 @@ public class Accommodation { // Accommodation 숙박업소 테이블
 	@Column(name="accom_Code")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accom_seq") //generator는 여기서 사용하는 이름//generator와 아래 name은 이름이 동일해야한다
 	@SequenceGenerator(name = "accom_seq", sequenceName = "accom_seq", allocationSize = 1)//sequenceName는 디비에서 사용하는 이름//name은 여기서 사용하는 이름
-	private int accomCode; // 아이디
+	private int accomCode; // 숙박시설 코드
 	private String accomName; // 숙박업소이름
 	private String accomTel; //전화번호
 	

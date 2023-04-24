@@ -16,8 +16,9 @@ public class MyController {
 	@RequestMapping("/")
 	public ModelAndView handleTop(ModelAndView mav) {
 		
-		mav.addObject("mymessage", "Hello😜😜");
-		mav.setViewName("myview");
+//		mav.addObject("mymessage", "Hello😜😜");
+//		mav.setViewName("myview");
+		mav.setViewName("redirect:/tours");
 		return mav;
 	}
 	

@@ -36,7 +36,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 		//즉 정상적인 사용자가 의도치 않은 위조요청을 보내는 것을 의미
 			.csrf().disable() //csrf 금지 해제
 			.authorizeHttpRequests()//csrf 무효화
-				.antMatchers("/login","/css/**").permitAll()//login과 css 사용 허용한다 //접근 허가 익명사용
+				.antMatchers("/login","/css/**","/tours/**","/","/searchAcc").permitAll()//login과 css 사용 허용한다 //접근 허가 익명사용
 				.antMatchers("/customers/create").permitAll()
 				.anyRequest().authenticated(); // 기타 나머지는 직접 접근 금지
 		//로그인 처리 구현;
@@ -55,7 +55,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 			.logout()
 			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 			.logoutUrl("/logout")
-			.logoutSuccessUrl("/login");
+			.logoutSuccessUrl("/tours");
 		
 		
 	}

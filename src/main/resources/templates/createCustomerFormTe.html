@@ -30,52 +30,69 @@ $(function(){
       <p class="point">&#9650;</p>
     </div><!--/.back-img-->
     <div class="form-section">
-		<form action="" method="post" th:object="${customer}" id="signIUpForm">
+		<form action="" method="post" th:object="${customer}" id="sigInUpForm">
 			<p>
-				<label for="customerName">이름: </label>
-				<input type="text" th:field="*{customerName}" >
-			</p>
-			<p>
-				<label for="customerBirth">생년월일(YYYY-MM-DD): </label>
-				<input type="text" th:field="*{customerBirth}" >
-			</p>
-			<p>
-				<label for="customerJob">직업: </label>
-				<input type="text" th:field="*{customerJob}" >
-			</p>
-			<p>
-				<label for="customerMail">이메일: </label>
-				<input type="email" th:field="*{customerMail}" >
-			</p>
-			<p>
-				<label for="customerTel">전화번호: </label>
-				<input type="text" th:field="*{customerTel}" >
-			</p>
-			<p>
-				<label for="customerPost">우편번호: </label>
-				<input type="text" th:field="*{customerPost}" >
-			</p>
-			<p>
-				<label for="customerAdd">주소: </label>
-				<input type="text" th:field="*{customerAdd}" >
-			</p>
-			<p>
-				<label for="customerPass">비밀번호: </label>
-				<input type="password" th:field="*{customerPass}" >
-			</p>
-			<p>
-				<label for="customerPassConfirm">비밀번호 재확인: </label>
-				<input type="password" th:field="*{customerPassConfirm}" >
-			</p>
-		
+						<label for="customerName">이름: </label>
+						<input type="text" th:field="*{customerName}" >
+						<span th:if="${#fields.hasErrors('customerName')}"
+						th:errors="*{customerName}"></span>
+						
+					</p>
+					<p>
+						<label for="customerBirth">생년월일(YYYY-MM-DD): </label>
+						<input type="text" th:field="*{customerBirth}" >
+						<span th:if="${#fields.hasErrors('customerBirth')}"
+						th:errors="*{customerBirth}"></span>
+					</p>
+					<p>
+						<label for="customerJob">직업: </label>
+						<input type="text" th:field="*{customerJob}" >
+						<span th:if="${#fields.hasErrors('customerJob')}"
+						th:errors="*{customerJob}"></span>
+					</p>
+					<p>
+						<label for="customerMail">이메일: </label>
+						<input type="email" th:field="*{customerMail}" >
+						<span th:if="${#fields.hasErrors('customerMail')}"
+						th:errors="*{customerMail}"></span>
+					</p>
+					<p>
+						<label for="customerTel">전화번호: </label>
+						<input type="text" th:field="*{customerTel}" >
+						<span th:if="${#fields.hasErrors('customerTel')}"
+						th:errors="*{customerTel}"></span>
+					</p>
+					<p>
+						<label for="customerPost">우편번호: </label>
+						<input type="text" th:field="*{customerPost}" >
+						
+					</p>
+					<p>
+						<label for="customerAdd">주소: </label>
+						<input type="text" th:field="*{customerAdd}" >
+					</p>
+					<p>
+						<label for="customerPass">비밀번호: </label>
+						<input type="password" th:field="*{customerPass}" >
+						<span th:if="${#fields.hasErrors('customerPass')}"
+						th:errors="*{customerPass}"></span>
+					</p>
+					<p>
+						<label for="customerPassConfirm">비밀번호 재확인: </label>
+						<input type="password" th:field="*{customerPassConfirm}" >
+						<span th:if="${#fields.hasErrors('customerPassConfirm')}"
+						th:errors="*{customerPassConfirm}"></span>
+					</p>
+					 <input value="회원가입" id="signUp"  type="submit">
 		</form>
 
+    </div> 
+    
+<!--     <div > -->
+<!--     <input type="submit" id="signUp" class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored"> -->
+<!--       <button>가입</button> -->
+<!--       </div> -->
 
-    </div> <!-- 폼 -->
-    <div 
-    <input type="submit" id="signUp" class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored">
-      <button>가입</button>
-      
  </div><!--/.signin-->
 </body>
 </html>
